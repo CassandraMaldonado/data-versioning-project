@@ -14,6 +14,8 @@ Both versions were tracked using DVC and Delta lake, then used to train and comp
 
 ## Results
 
+Delta lake was faster and simpler for versioning tabular data, while DVC worked better for Git-integrated workflows.
+
 | Criterion | DVC | Delta Lake |
 |------------|------|-------------|
 | Setup | Requires Git and CLI configuration | Python API; easier setup |
