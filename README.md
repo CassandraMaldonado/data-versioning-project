@@ -10,7 +10,9 @@ This project was developed to better understand how data versioning supports rep
 
 - Version 2 (v2): Cleaned version with outliers removed.
 
-Both versions were tracked using DVC and Delta Lake, then used to train and compare Random Forest models. Differential privacy was simulated with the Laplace Mechanism (e = 2.5) to measure its effect on accuracy.
+Both versions were tracked using DVC and Delta Lake, then used to train and compare Random Forest models.
+
+Differential privacy was simulated with the Laplace Mechanism (ε = 2.5) to measure its effect on accuracy.
 
 ## Results
 
