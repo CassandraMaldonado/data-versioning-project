@@ -2,7 +2,7 @@
 
 ## Project Description
 
-This project was developed to better understand how data versioning supports reproducible machine learning workflows. I compared DVC and Delta Lake using a dataset of CrossFit athletes and built a Random Forest regression model to predict the total lift weight. I added a DP step using the Laplace mechanism (e = 2.5) to see how privacy noise affects model performance. The goal was to gain practical experience with version control, data reproducibility, and privacy tradeoffs—all key concepts in responsible AI and data science.
+This project was developed to better understand how data versioning supports reproducible machine learning workflows. I compared DVC and Delta Lake using a dataset of CrossFit athletes and built a Random Forest regression model to predict the total lift weight. I added a DP step using the Laplace mechanism (e = 2.5) to see how privacy noise affects model performance. The goal was to gain experience with version control, data reproducibility and privacy tradeoffs.
 
 ## Methodology
 
