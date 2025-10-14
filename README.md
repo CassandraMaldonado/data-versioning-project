@@ -23,4 +23,3 @@ Delta lake was faster and simpler for versioning tabular data, while DVC worked 
 | Switching | Manual checkout | Instant query by version |
 | Best Use | ML artifact tracking | Data lake versioning |
 
-## Model Performance
