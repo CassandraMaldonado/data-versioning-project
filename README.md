@@ -38,5 +38,5 @@ DP vs Non-DP
 
 - Applying Differential Privacy reduced accuracy slightly (%) but improved data protection.
 
-The Laplace Mechanism is an easy way to apply DP noise without complex model changes.
+- The Laplace Mechanism is an easy way to apply DP noise without complex model changes.
 
