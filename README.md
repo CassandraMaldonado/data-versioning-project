@@ -23,12 +23,14 @@ Delta lake was faster and simpler for versioning tabular data, while DVC worked 
 | Switching | Manual checkout | Instant query by version |
 | Best Use | ML artifact tracking | Data lake versioning |
 
-DP vs Non-DP (Example Schema)
+DP vs Non-DP
+
 | Setting | RMSE | MAE | R² |
 |----------|------|-----|----|
 | Non-DP | _fill_ | _fill_ | _fill_ |
 | DP (Laplace, ε = 2.5) | _fill_ | _fill_ | _fill_ |
-Key Findings
+
+## Key Findings
 
 Delta Lake offered smoother version management for data tables.
 
