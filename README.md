@@ -23,3 +23,18 @@ Delta lake was faster and simpler for versioning tabular data, while DVC worked 
 | Switching | Manual checkout | Instant query by version |
 | Best Use | ML artifact tracking | Data lake versioning |
 
+DP vs Non-DP (Example Schema)
+| Setting | RMSE | MAE | R² |
+|----------|------|-----|----|
+| Non-DP | _fill_ | _fill_ | _fill_ |
+| DP (Laplace, ε = 2.5) | _fill_ | _fill_ | _fill_ |
+Key Findings
+
+Delta Lake offered smoother version management for data tables.
+
+Cleaning data improved model accuracy by around X%.
+
+Applying Differential Privacy reduced accuracy slightly (Y%) but improved data protection.
+
+The Laplace Mechanism is an easy way to apply DP noise without complex model changes.
+
