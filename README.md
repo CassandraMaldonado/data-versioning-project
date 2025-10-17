@@ -32,7 +32,7 @@ DP vs Non-DP
 
 ## Key Findings
 
-Delta Lake offered smoother version management for data tables.
+- Delta Lake offered smoother version management for data tables.
 
 Cleaning data improved model accuracy by around X%.
 
