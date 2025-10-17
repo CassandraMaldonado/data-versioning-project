@@ -34,7 +34,7 @@ DP vs Non-DP
 
 - Delta Lake offered smoother version management for data tables.
 
-Cleaning data improved model accuracy by around X%.
+- Cleaning data improved model accuracy by around %.
 
 Applying Differential Privacy reduced accuracy slightly (Y%) but improved data protection.
 
