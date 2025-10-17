@@ -36,7 +36,7 @@ DP vs Non-DP
 
 - Cleaning data improved model accuracy by around %.
 
-Applying Differential Privacy reduced accuracy slightly (Y%) but improved data protection.
+- Applying Differential Privacy reduced accuracy slightly (%) but improved data protection.
 
 The Laplace Mechanism is an easy way to apply DP noise without complex model changes.
 
