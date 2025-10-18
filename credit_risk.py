@@ -92,7 +92,7 @@ if LINEAGE_AVAILABLE and LINEAGE_CONNECTED:
     except Exception as e:
         print(f"Failed to emit START event: {e}")
 
-print("Loading german credit risk dataset.")
+print("German credit risk dataset.")
 url = "https://archive.ics.uci.edu/ml/machine-learning-databases/statlog/german/german.data"
 
 try:
@@ -101,7 +101,7 @@ try:
     df_raw.to_csv('credit_risk_raw.csv', index=False)
     print("Saved to credit_risk_raw.csv")
 except Exception as e:
-    print(f"Could not download from UCI. Using sample data.")
+    print(f"Could not download from UCI.")
     np.random.seed(42)
     n_samples = 1000
     df_raw = pd.DataFrame({
