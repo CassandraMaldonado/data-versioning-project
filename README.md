@@ -27,7 +27,7 @@ DP vs Non-DP
 
 | Setting | RMSE | MAE | R² |
 |----------|------|-----|----|
-| Non-DP | 10.11 |  |  |
+| Non-DP | 10.11 | 3.81 | 0.9987 |
 | DP (Laplace, ε = 2.5) |  |  |  |
 
 ## Key Findings
