@@ -6,6 +6,21 @@ This project demonstrates a MLOps workflow integrating open-source versioning to
 
 The workflow aligns with the full assignment specification from data cleaning and feature engineering to EDA, model evaluation, linting and DP implementation, all under a traceable version-controlled pipeline.
 
+
+## Tools and Libraries  
+
+| Tool / Library | Purpose |
+|-----------------|----------|
+| **DVC** | File-based data version control integrated with Git |
+| **Delta Lake** | Table-based versioning and time-travel queries |
+| **Scikit-Learn** | Model training (`RandomForestRegressor`) |
+| **Matplotlib / Seaborn** | Exploratory Data Analysis |
+| **Flake8** | Linter for code quality |
+| **Numpy / Pandas** | Data manipulation and Laplace noise addition |
+| **Shutil** | Dataset switching automation |
+
+---
+
 ## Methodology
 
 - Version 1 (v1): Original dataset.
