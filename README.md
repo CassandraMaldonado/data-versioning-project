@@ -16,7 +16,7 @@ The workflow aligns with the full assignment specification from data cleaning an
 | **Scikit-Learn** | Model training. |
 | **Matplotlib / Seaborn** | EDA. |
 | **Flake8** | Linter for code quality. |
-| **Shutil** | Dataset switching automation |
+| **Shutil** | Dataset switching automation. |
 
 
 ## Methodology
