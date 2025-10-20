@@ -28,6 +28,9 @@ git commit -m "Add dataset v1"
 dvc add athletes_v2.csv
 git commit -m "Add dataset v2"
 
+------
+
+
 ## Results
 
 Delta lake was faster and simpler for versioning tabular data, while DVC worked better for Git-integrated workflows.
