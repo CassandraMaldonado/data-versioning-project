@@ -13,10 +13,9 @@ The workflow aligns with the full assignment specification from data cleaning an
 |-----------------|----------|
 | **DVC** | File-based version control integrated with Git. |
 | **Delta Lake** | Table-based versioning and time-travel queries. |
-| **Scikit-Learn** | Model training (`RandomForestRegressor`) |
-| **Matplotlib / Seaborn** | Exploratory Data Analysis |
-| **Flake8** | Linter for code quality |
-| **Numpy / Pandas** | Data manipulation and Laplace noise addition |
+| **Scikit-Learn** | Model training. |
+| **Matplotlib / Seaborn** | EDA. |
+| **Flake8** | Linter for code quality. |
 | **Shutil** | Dataset switching automation |
 
 
