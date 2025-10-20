@@ -22,13 +22,12 @@ The workflow aligns with the full assignment specification from data cleaning an
 ## Data Versioning Workflow  
 
 ### Step 1: Created and tracked the versions.
-
+``` bash
 dvc add athletes_v1.csv
 git commit -m "Add dataset v1"
 dvc add athletes_v2.csv
 git commit -m "Add dataset v2"
-
-
+```
 
 ### Step 2: Delta Lake Storage
 write_deltalake('./delta_athletes_v1', table_v1)
