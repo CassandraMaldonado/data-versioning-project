@@ -30,8 +30,10 @@ git commit -m "Add dataset v2"
 ```
 
 ### Step 2: Delta Lake Storage
+``` bash
 write_deltalake('./delta_athletes_v1', table_v1)
 write_deltalake('./delta_athletes_v2', table_v2)
+```
 
 
 Each version was also saved as a DeltaTable for direct querying and rollback (time-travel).
