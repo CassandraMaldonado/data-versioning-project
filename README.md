@@ -2,7 +2,7 @@
 
 ## Project Description
 
-This project demonstrates a MLOps workflow integrating open-source versioning tools and privacy-preserving techniques. Using a dataset of CrossFit athletes, I compared DVC and Delta Lake for reproducible dataset management, trained Random Forest regression models to predict total lift weight, and introduced Differential Privacy (DP) using the Laplace mechanism to evaluate the accuracy–privacy trade-off.
+This project demonstrates a MLOps workflow integrating open-source versioning tools and privacy-preserving techniques. Using a dataset of CrossFit athletes, I compared DVC and Delta Lake for reproducible dataset management, trained Random Forest regression models to predict total lift weight and introduced DP using the Laplace mechanism to evaluate the accuracy–privacy trade-off.
 
 The workflow aligns with the full assignment specification — from data cleaning and feature engineering to EDA, model evaluation, linting, and DP implementation — all under a traceable version-controlled pipeline.
 
