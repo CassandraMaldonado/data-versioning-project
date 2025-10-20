@@ -27,6 +27,7 @@ dvc add athletes_v1.csv
 git commit -m "Add dataset v1"
 dvc add athletes_v2.csv
 git commit -m "Add dataset v2"
+```bash
 
 
 ### Step 2: Delta Lake Storage
