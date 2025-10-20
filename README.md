@@ -19,13 +19,14 @@ The workflow aligns with the full assignment specification from data cleaning an
 | **Shutil** | Dataset switching automation. |
 
 
-## Methodology
+## Data Versioning Workflow  
 
-- Version 1 (v1): Original dataset.
-
-- Version 2 (v2): Cleaned version with outliers removed.
-
-Both versions were tracked using DVC and Delta lake, then used to train and compare Random Forest models. DP was simulated with the Laplace Mechanism (e = 2.5) to measure its effect on accuracy.
+### Step 1: Created and tracked the versions.
+```bash
+dvc add athletes_v1.csv
+git commit -m "Add dataset v1"
+dvc add athletes_v2.csv
+git commit -m "Add dataset v2"
 
 ## Results
 
