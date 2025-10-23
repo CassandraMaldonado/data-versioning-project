@@ -30,7 +30,7 @@ plt.style.use('seaborn-v0_8-darkgrid')
 sns.set_palette("husl")
 
 print("-"*80)
-print("Credit risk analysis with data luneage.")
+print("Credit risk analysis with data lineage.")
 print("-"*80)
 
 # Openlineage with error handling.
@@ -93,15 +93,39 @@ if LINEAGE_AVAILABLE and LINEAGE_CONNECTED:
         print(f"Failed to emit START event: {e}")
 
 print("German credit risk dataset.")
-url = "https://archive.ics.uci.edu/ml/machine-learning-databases/statlog/german/german.data"
 
-try:
-    df_raw = pd.read_csv(url, sep=' ', names=column_names, header=None)
-    print(f"Dataset loaded: {df_raw.shape}")
-    df_raw.to_csv('credit_risk_raw.csv', index=False)
-    print("Saved to credit_risk_raw.csv")
-except Exception as e:
-    print(f"Could not download from UCI.")
+import os
+
+if os.path.exists('german.data'):
+    try:
+        print("Loading from local file: german.data")
+        df_raw = pd.read_csv('german.data', sep=' ', names=column_names, header=None)
+        print(f"Dataset loaded: {df_raw.shape}")
+        df_raw.to_csv('credit_risk_raw.csv', index=False)
+        print("Saved to credit_risk_raw.csv")
+    except Exception as e:
+        print(f"Error reading the file: {e}")
+        df_raw = None
+else:
+    print("Local file 'german.data' not found.")
+    df_raw = None
+
+if df_raw is None:
+    url = "https://archive.ics.uci.edu/ml/machine-learning-databases/statlog/german/german.data"
+    try:
+        print("Downloading from the UCI repository.")
+        df_raw = pd.read_csv(url, sep=' ', names=column_names, header=None)
+        print(f"Dataset loaded from UCI: {df_raw.shape}")
+        df_raw.to_csv('credit_risk_raw.csv', index=False)
+        print("Saved to credit_risk_raw.csv")
+    except Exception as e:
+        print(f"Could not download from UCI: {e}")
+        df_raw = None
+
+
+if df_raw is None:
+    print("\n" + "!"*80)
+    print("Warning: Using synthetic data, the results will not match real UCI dataset.")
     np.random.seed(42)
     n_samples = 1000
     df_raw = pd.DataFrame({
@@ -193,8 +217,7 @@ df_clean['duration_category'] = pd.cut(df_clean['duration'],
 print("New features created: age_group, amount_category and duration_category.")
 
 df_clean.to_csv('credit_risk_cleaned.csv', index=False)
-print("Saved to: credit_risk_cleaned.csv")
-
+print("Saved to credit_risk_cleaned.csv")
 
 print("-"*80)
 print("EDA.")
@@ -304,7 +327,6 @@ ax10.set_title('Correlation matrix', fontweight='bold', fontsize=12)
 plt.savefig('credit_risk_eda_report.png', dpi=300, bbox_inches='tight')
 plt.close()
 
-
 print("-"*80)
 print("Insights and stats.")
 print("-"*80)
@@ -373,7 +395,7 @@ with open('credit_risk_insights.txt', 'w') as f:
     for i, insight in enumerate(insights, 1):
         f.write(f"{i}. {insight}\n")
 
-print("Saved to: credit_risk_insights.txt")
+print("Saved as credit_risk_insights.txt")
 
 # summary statistics table.
 summary_stats = df_clean.groupby('risk_label').agg({
@@ -386,8 +408,7 @@ print("Summary stats by risk:")
 print(summary_stats)
 
 summary_stats.to_csv('credit_risk_summary_stats.csv')
-print("Summary stats saved to: credit_risk_summary_stats.csv")
-
+print("Summary stats saved as credit_risk_summary_stats.csv")
 
 print("-"*80)
 print("Data lineage.")
@@ -527,8 +548,7 @@ ax.text(0.2, 7.2, metadata_text, ha='left', va='top', fontsize=8,
 plt.savefig('credit_risk_data_lineage.png', dpi=300, bbox_inches='tight', facecolor='white')
 plt.close()
 
-print("Data lineage diagram saved: credit_risk_data_lineage.png")
-
+print("Data lineage diagram saved as credit_risk_data_lineage.png")
 
 if LINEAGE_AVAILABLE and LINEAGE_CONNECTED:
     print("\n" + "="*80)
@@ -627,7 +647,7 @@ if LINEAGE_AVAILABLE and LINEAGE_CONNECTED:
         client.emit(complete_event)
         print(f"Lineage Summary:")
         print(f"   Input: {input_dataset.name}")
-        print(f"   Outputs: {len([output_cleaned, output_insights, output_visualizations])} datasets")
+        print(f"   Outputs: {len([output_cleaned, output_insights, output_visualizations])} datasets.")
         print(f"   Transformations: 5 major steps")
         print(f"   View lineage at: http://localhost:3000")
         print(f"   Job: {namespace}/{job_name}")
@@ -635,20 +655,11 @@ if LINEAGE_AVAILABLE and LINEAGE_CONNECTED:
         
     except Exception as e:
         print(f"Failed to emit complete event: {e}")
-        print(" Lineage diagram was still created")
-
+        print(" Lineage diagram still created.")
 
 print("-"*80)
 print("Pipeline complete.")
 print("-"*80)
-
-print("Output Files Generated:")
-print("   - credit_risk_raw.csv is the raw data from UCI.")
-print("   - credit_risk_cleaned.csv is the cleaned and transformed data.")
-print("   - credit_risk_insights.txt id the key business insights.")
-print("   - credit_risk_summary_stats.csv is the stats summaries.")
-print("   - credit_risk_eda_report.png is the EDA visuals.")
-print("   - credit_risk_data_lineage.png is the data lineage diagram.")
 
 if LINEAGE_AVAILABLE and LINEAGE_CONNECTED:
     print("Data lineage tracking:")
@@ -659,7 +670,7 @@ if LINEAGE_AVAILABLE and LINEAGE_CONNECTED:
     print(f" - Run ID: {run_id}")
 else:
     print("Data lineage:")
-    print(" - Visual diagram created (credit_risk_data_lineage.png)")
+    print(" - Visual diagram saved as credit_risk_data_lineage.png")
     print(" - To track with Marquez, run:")
     print("      docker run -d -p 3000:3000 -p 5000:5000 marquezproject/marquez")
 
